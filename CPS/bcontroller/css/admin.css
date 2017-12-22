@@ -1,0 +1,852 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+*{
+	/*border: none;*/
+	margin: 0;
+	/* [disabled]padding:0; */
+}
+
+a{
+	outline: none; /* for Firefox */
+	hlbr:expression(this.onFocus=this.blur()); /* for IE */
+	text-decoration:none;
+}
+
+a:hover,li,li:hover,input, button {
+    vertical-align:baseline;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+
+html, body{
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	-webkit-text-size-adjust:none;
+	font-family:"微軟正黑體", "新細明體";
+	color:#333333;
+	background:#333;
+}
+
+:focus {outline: 0;}
+
+/*::selection {
+    background: transparent;
+}
+::-moz-selection {
+    background: transparent;
+}*/
+input, select, textarea, option, optgroup {
+	font:0.938em "微軟正黑體", "新細明體";
+	color: #000000;
+	padding:1px;
+	border:1px solid #ccc;
+	margin:5px;
+}
+a.button, button[type='button']{
+	background:#f5f3f4;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border: 1px solid #cbcbcb;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font:0.813em "微軟正黑體", "新細明體" ,'Open Sans', sans-serif;
+	padding:3px 18px;
+	text-decoration:none;
+	margin:3px 0;
+	}
+	a.button:hover, button[type='button']:hover{
+	background:#0d9ad5;
+	color:#fff;
+}
+
+.btn_next {
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	padding:6px 18px;
+	border:1px solid #337fed;
+	background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+	background:-ms-linear-gradient( top, #3d94f6 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #3d94f6), color-stop(100%, #1e62d0) );
+	background-color:#3d94f6;
+	color:#ffffff;
+	display:inline-block;
+	text-shadow:1px 1px 0px #1570cd;
+ 	-webkit-box-shadow:inset 1px 1px 0px 0px #97c4fe;
+ 	-moz-box-shadow:inset 1px 1px 0px 0px #97c4fe;
+ 	box-shadow:inset 1px 1px 0px 0px #97c4fe;
+}.btn_next:hover {
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #1e62d0), color-stop(100%, #3d94f6) );
+	background-color:#1e62d0;
+}.btn_next:active {
+	position:relative;
+	top:1px;
+}
+
+/*aside menu左側選單*/
+aside{
+	display:block;
+	float:left;
+	width:15%;
+	height:inherit;
+	background:#333;
+}
+
+aside h1{
+	display:block;
+	text-align:center;
+	margin:0;	
+	padding:10px;
+	color:#fff;
+	border-bottom: 1px solid #444;
+	overflow:hidden; 
+}
+
+aside ul{
+	clear:both;
+	margin:0;
+	padding:0;
+}
+
+aside ul li{
+	height:50px;
+	line-height:50px;
+	padding:0 15px;
+	text-align:left;
+	border-bottom: 1px solid #444;
+	background: #333;	
+}
+
+aside ul li img{
+	margin:0 10px -3px 0;
+}
+
+aside ul li a{
+	display:block;
+	width:105%;
+	height:49px;
+	color:#fff;
+	border-bottom: 1px solid #222;
+}
+
+aside ul li:hover{
+	background:#444;
+	border-bottom: 1px solid #555;
+}
+
+/*----------------------------------------------------------------------單元列表--------------------------------------------------------------------------*/
+
+/*右側*/
+#wrapper{
+	float:left;
+	width:85%;
+	height:100%;
+	background:#f1f1f1;
+}
+
+#wrapper .search{
+	float:left;
+	margin:5px 10px;
+}
+
+#wrapper .search input{
+	margin:0 3px;
+}
+
+#wrapper ul {
+	float:right;
+	margin:5px 10px;
+}
+
+#wrapper ul li{
+	display:inline-block;
+}
+
+/*列表標題*/
+table.title{
+	clear:both;
+	width:100%;
+}
+table.title td{
+	text-align:center;
+	padding:10px 5px;
+	color:#ffffff;	
+	font-weight:bold;
+	background:-moz-linear-gradient( center top, #9cc204 5%, #93b800 100% );
+	background:-ms-linear-gradient( top, #9cc204 5%, #93b800 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9cc204', endColorstr='#93b800');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #9cc204), color-stop(100%, #93b800) );
+	background-color:#9cc204;
+	text-shadow:1px 1px 0px #528009;
+ 	-moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
+	border:none;
+}
+
+/*單元列表*/
+table.list_item{
+	width:100%;
+}
+table.list_item td{
+	vertical-align:middle;
+	text-align:center;
+	padding:15px 5px;
+	color:#333333;
+}
+
+/*單元列表→作業列表*/
+table.list_detial{
+	width:100%;
+}
+table.list_detial td.title{
+	background:#ffffff;
+	text-shadow:none;
+ 	-moz-box-shadow:none;
+	font-weight:bold;
+	color:#333333;
+	border-bottom:3px double #d5d5d5;
+	padding:8px 5px;
+}
+table.list_detial td{
+	background:#ffffff;
+	vertical-align:middle;
+	text-align:center;
+	padding:10px 5px;
+	color:#333333;	
+	border-bottom:1px dashed #d5d5d5;
+}
+a.name, p.name{
+	display:block;
+	color:#333333;
+	text-align:left;
+}
+a.name:hover{
+	color:#0085ec;
+}
+
+/*收合效果*/
+.accordionButton {	
+	background: #f1f1f1;
+	border-bottom: 1px solid #cccccc;
+	cursor: pointer;
+}	
+.on {
+	background: #d3d3d3;
+}
+.over {
+	background: #d3d3d3;
+}
+
+/*----------------------------------------------------------------------新增模組--------------------------------------------------------------------------*/
+
+/*右側-新增模組*/
+#science_list{
+	float:left;
+	width:85%;
+	height:100%;
+	background:#f1f1f1;
+}
+
+#science_list h2{
+	color:#fff;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border:1px solid #ccc;
+	height:30px;
+	line-height:30px;
+	padding:5px 15px;
+	background:-moz-linear-gradient( center top, #9cc204 5%, #93b800 100% );
+	background:-ms-linear-gradient( top, #9cc204 5%, #93b800 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9cc204', endColorstr='#93b800');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #9cc204), color-stop(100%, #93b800) );
+	background-color:#9cc204;
+	text-shadow:1px 1px 0px #528009;
+ 	-webkit-box-shadow:inset 1px 1px 0px 0px #ffffff;
+ 	-moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
+}
+
+#science_list .jcarousel li{
+	text-align:center;
+	background:#eee;
+}
+
+#science_list .jcarousel li .model{
+	font-weight:bold;
+	width:100%;
+	height:150px;
+	line-height:150px;
+	background:#333;
+	color:#fff;
+	text-align:center;
+}
+
+#science_list .jcarousel li .button{
+	margin:8px 0;
+}
+
+/*預覽圖片*/
+#preview{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	text-align:center;
+}
+
+/*編輯tabs*/
+#science_list .abgne_tab {
+	clear: left;
+	width: 100%;
+	margin: 0;
+	border:1px solid #ccc;
+}
+#science_list ul.tabs {
+	width: 100%;
+	height: 32px;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+}
+#science_list ul.tabs li {
+	float: left;
+	height: 31px;
+	line-height: 31px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: -1px;
+	border: 1px solid #999;
+	border-left: none;
+	background: #e1e1e1;
+}
+#science_list ul.tabs li a {
+	display: block;
+	padding: 0 20px;
+	color: #000;
+	border: 1px solid #fff;
+	text-decoration: none;
+}
+#science_list ul.tabs li a:hover {
+	background: #ccc;
+}
+#science_list ul.tabs li.active  {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+#science_list ul.tabs li.active a:hover {
+	background: #fff;
+}
+#science_list div.tab_container {
+	clear: left;
+	width: 100%;
+	border: 1px solid #999;
+	border-top: none;
+	background: #fff;
+}
+#science_list div.tab_container .tab_content {
+	padding: 20px;
+}
+#science_list div.tab_container .tab_content h2 {
+	margin: 0 0 20px;
+}	
+
+/*list_info*/
+ul.list_info{
+	clear:both;
+	width:95%;
+	margin:0 auto;
+	padding:0
+}
+
+ul.list_info li{
+	display:inline-block;
+	text-align:center;
+	margin:15px 20px;
+}
+
+ul.list_info li img{
+	border:1px solid #ccc;
+}
+
+ul.list_info li p{
+	margin:8px 0;
+}
+
+
+/*----------------------------------------------------------------------模組--------------------------------------------------------------------------*/
+.model_style{
+	float:left;
+	width:85%;
+	min-height:100%;
+	background:#f1f1f1;
+}
+
+.model_style #header h2{
+	float:left;
+	margin:10px 20px;
+	color:#333
+}
+
+#btn{
+	float:right;
+	margin:10px 20px;	
+}
+
+#btn button{
+	margin-left:5px;
+}
+
+/*模組1*/
+.model_style ul.name{
+	clear:both;
+	display:block;
+	width:98%;
+	border:1px solid #ccc;
+	margin:10px auto;
+	background:#fff;
+}
+
+ul.name li{
+	display:block;
+	padding:30px 10px;
+	border-bottom:1px solid #eee;
+}
+
+ul.name li span{
+	display:inline-block;
+	width:120px;
+	text-align:center
+}
+
+ul.name li p{
+	font-size:15px;
+	padding:15px 10px;
+}
+
+.model_style input, .model_style textarea{
+	display:inline-block;
+	background:#F7F7F7;
+	border:1px solid #E0E0E0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:2px;
+}
+
+.model_style textarea{ height:100px;}
+
+.model_style table.science_2{
+	background:#fff;
+}
+
+.model_style table td{
+	padding:10px;
+}
+
+.span_module{
+	text-align:center;
+	padding:10px;
+}
+
+.model_style input{ margin:3px 0; -webkit-border-radius: 5px;	-moz-border-radius: 5px;	border-radius: 5px;	}
+
+.model_style .c_title{ width:40%; }
+.model_style .c_memo{ width:70%;}
+.model_style #swimg{ width:200px; font-size:13px; }
+.model_style #updsc, .model_style #downdsc{ 
+	margin:5px auto; 
+	width:150px; 
+	text-align:center; 
+}
+
+#btn_submit{
+	text-align:center;
+	
+}
+
+#inline .button, #inline_operation .button{
+	display:block;
+	width:70px;
+	margin:10px auto;
+	text-align:center
+}
+
+#inline_operation .c_title{ width:40%; }
+#inline_operation .c_memo{ width:70%;}
+
+
+/*科學模組1*/
+.science_1{
+	clear:both;
+	overflow-x:scroll;
+	border:1px solid #ccc;
+	margin:0 15px;
+	background:#fff;
+}
+
+.science_1 table{
+	margin:0 auto;
+	background:#fff;
+	padding:10px;
+}
+
+.science_1 table td{
+	padding:10px;
+	border:none;
+	text-align:center
+}
+
+.science_1 .s1img{
+	padding:10px ;
+}
+
+
+/*科學模組2*/
+.science_2{
+	clear:both;
+	width:98%;
+	border:1px solid #ccc;
+	margin:0 auto;
+	background:#fff;
+}
+
+.science_2 td{
+	text-align:center;
+	vertical-align:top;
+	border:1px solid #eee;		
+}
+
+.science_2 ul{
+	clear:both;
+	margin:10px 0;
+	padding:0;
+}
+
+.science_2 ul li{
+	float:left;
+	margin:10px 5px;
+	border:none;
+	text-align:center;
+}
+
+.science_2 ul li .s2img{
+	height:260px;
+}
+
+.science_2 ul li .swimg{
+	width:60%;
+}
+
+.science_2 .add_btn{
+	display:inline-block;
+	width:100%;
+	border-bottom:1px solid #eee;
+	padding-bottom:3px;
+}
+
+.science_2 .add_btn button{
+	float:left;
+}
+
+.science_2 .radio{
+	display:block;
+	width:250px;
+	clear:both;
+	margin-top:10px;
+}
+
+.science_2 .leftdsc{
+	width:100px;
+}
+
+.science_2 .radio input, .science_2 .radio button{
+	display:inline-block;
+	margin:0 5px;
+}
+
+.science_2 td.btm{
+	text-align:center;
+}
+
+.science_2 td.btm .s2img2{
+	height:260px;
+}
+
+/*科學模組3*/
+.science_3{
+	clear:both;
+	width:98%;
+	border:1px solid #ccc;
+	margin:0 auto;
+	background:#fff;
+}
+
+.science_3 td{
+	vertical-align:middle;
+	text-align:center;
+	border-bottom:1px solid #eee;
+}
+
+.science_3 .add_btn{
+	float:right;
+	padding-bottom:3px;
+}
+
+.science_3 .s3img{
+	height:260px;
+}
+
+.science_3 td.symbol{
+	padding:0 10px;
+	font-size:24px;
+	vertical-align:middle;
+	width:30px;
+}
+
+.science_3 .tpt .s3img{
+	display:inline-block;
+	text-align:center;
+}
+
+.science_3 .tpt textarea{
+	display:inline-block;
+}
+
+.science_3 .swimg1, .science_3 .swimg2, .science_3 .swimg3{
+	width:260px;
+}
+
+
+/*科學模組4*/
+.science_4{
+	clear:both;
+	display:block;
+	width:98%;
+	border:1px solid #ccc;
+	margin:0 auto;
+	background:#fff;
+}
+
+.science_4 #s4top{
+	display:block;
+	text-align:center;
+	width:100%;
+	padding:10px;
+	border-bottom:1px solid #eee;	
+}
+
+.science_4 #s4top .s4img{
+	height:260px;
+}
+
+.science_4 #s4btm{
+	display:block;
+	text-align:center;
+	width:100%;
+	padding:10px;
+}
+
+.science_4 #s4btm .add_btn{
+
+	margin:5px 0;
+}	
+
+.science_4 #s4btm input{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	margin:5px;
+}
+
+/*科學模組5*/
+.science_5{
+	clear:both;
+	display:block;
+	width:98%;
+}
+
+.science_5 ul input{
+	margin:0 5px;
+}
+
+.science_5 a.button, .science_5 button[type='button']{
+	background:#0d9ad5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border: 1px solid #cbcbcb;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font:0.813em "微軟正黑體", "新細明體" ,'Open Sans', sans-serif;
+	padding:3px 18px;
+	text-decoration:none;
+	margin:0 3px ;
+	}
+	.science_5 a.button:hover, .science_5 button[type='button']:hover{
+	background:#0d9ad5;
+	color:#044865;
+}
+
+.science_5 table{
+	width:100%;
+	margin:0 auto;
+}
+
+.science_5 .graph{
+	 width:600px;
+	 margin:10px auto 50px auto;
+}
+
+
+/*閱讀模組1*/
+.read_1 .del_img{
+	display:inline-block;
+	max-width:800px;
+}
+
+.read_1 input{
+	margin:0 5px;
+	padding:0;
+}
+
+#cke{
+	width:96.8%;
+	border:1px solid #ccc;
+	margin:10px auto;
+	padding:10px;	
+	background:#fff;
+}
+
+#cke p{
+	margin-bottom:10px;
+}
+
+/*閱讀模組2*/
+.read_2 table{
+	clear:both;
+	width:98%;
+	border:1px solid #ccc;
+	margin:10px auto;
+	background:#fff;
+}	
+
+.read_2 table td{
+	border:1px solid #ccc;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.read_2 table td button{
+	margin:0 2px;
+}
+
+
+
+/*數學模組*/
+.mathematics_1{
+	clear:both;
+	display:block;
+	width:98%;
+	border:1px solid #ccc;
+	margin:10px auto;
+	background:#fff;
+}
+
+ul.mathematics_1 li{
+	display:block;
+	padding:30px 10px;
+	border-bottom:1px solid #eee;
+}
+
+ul.mathematics_1 li span{
+	display:inline-block;
+	width:120px;
+	text-align:center
+}
+
+
+/*login登入*/
+#login{
+	background:url(../../images/login_bg.jpg) center 400px no-repeat #333;
+}
+
+#login h1{
+	position:absolute;
+	top:200px;
+	left:25%;
+}
+
+#login table{
+	position:absolute;
+	top:290px;
+	left:25%;
+	font-size:22px;
+	color:#fff;
+}
+
+#login table td{
+	padding:0 10px;
+	height:60px;
+	vertical-align:middle;
+}
+
+#login
+input[type="text"],
+input[type="password"] {
+	font-size:20px;
+	width:280px;
+	height:30px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+}
+
+#login
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+#login input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+	font-size:18px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	padding:4px 14px;
+	border:1px solid #337fed;
+	background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+	background:-ms-linear-gradient( top, #3d94f6 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #3d94f6), color-stop(100%, #1e62d0) );
+	background-color:#3d94f6;
+	color:#ffffff;
+	display:inline-block;
+	text-shadow:1px 1px 0px #1570cd;
+ 	-webkit-box-shadow:inset 1px 1px 0px 0px #97c4fe;
+ 	-moz-box-shadow:inset 1px 1px 0px 0px #97c4fe;
+ 	box-shadow:inset 1px 1px 0px 0px #97c4fe;
+	cursor:pointer;
+}#login input[type="button"]:hover, #login input[type="reset"]:hover, #login input[type="submit"]:hover {
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #1e62d0), color-stop(100%, #3d94f6) );
+	background-color:#1e62d0;
+}
